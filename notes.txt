@@ -1,0 +1,55 @@
+
+Componenti in react:  
+
+    il ragionamento è il medesimo di Vue a livello di quando devono essere utilizzati i Componenti.
+
+    il Componente React è una funzione, ma può anche essere approciato come classe, utilizzando la programmazione ad oggetti,
+    seppure su React è considerabile in "disuso".
+
+    Al posto di class nel tag css viene utilizzato className=""; in quanto quello che si scrive è una "simulazione" di html ma a
+    tutti gli effetti è js, dove class è una parola riservata.
+
+    I componenti si trovano in src/components
+
+Stile scoped per i componenti:
+
+    1- Styled Components : npm i styled-components                                                <---- Da studiare
+
+    2- Stile in linea con passaggio di oggetti javascript : <div style={{ height : 200px}}></div>
+
+    3- Stile centralizzato nella funzione :
+        
+        Esempio con style:
+
+        const divStyle = {
+            height : "300px",
+            borderRadius: "25px",
+        }
+
+        <div style="divStyle"></div>
+
+
+Aggiungere classi e stile in linea in modo dinamico
+
+
+    Ternario all'interno del codice jsx
+
+        const x = 9;
+
+        const divStyle = {
+            height: x < 10? "300px" : "500px",
+            borderRadius: "25px",
+
+        }
+
+        <div style="divStyle"></div>
+
+    Assegnazione classi dinamiche 
+
+        const x = 1;
+
+        //se x > 0 assegna la classe active
+
+        <div className={ `box card ${ x > 0 ? "active" : "" }` }></div>
+
+        //concatenazione con backtick (template literal) `` e ternario inline all'assegnazione della classe
